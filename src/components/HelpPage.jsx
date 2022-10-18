@@ -1,7 +1,7 @@
 import React from "react";
 
 const HelpPage = () => (
-  <div className="test">HelpPage
+  <div className="">HelpPage
   </div>
 )
 
