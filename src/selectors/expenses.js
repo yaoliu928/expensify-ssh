@@ -13,7 +13,6 @@ const getVisibleExpress = (expenses, { text, sortBy, startDate, endDate }) => {
     if (sortBy === 'amount') {
       return a.amount >= b.amount ? -1 : 1
     }
-
   });
 };
 

@@ -13,13 +13,14 @@ import reportWebVitals from './reportWebVitals';
 import './index.scss';
 
 const store = configureStore();
-store.dispatch(addExpense({ description: 'water bill', amount: 4600 }));
-store.dispatch(addExpense({ description: 'gas bill' }));
-store.dispatch(setTextFilter('bill'));
+store.dispatch(addExpense({ description: 'Water bill', amount: 1, createdAt: 3 }));
+store.dispatch(addExpense({ description: 'Gas bill', amount: 2, createdAt: 2 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 3, createdAt: 1 }));
+// store.dispatch(setTextFilter('gas'));
 
-setTimeout(() => {
-  store.dispatch(setTextFilter('bill'));
-}, 3000);
+// setTimeout(() => {
+//   store.dispatch(setTextFilter('bill'));
+// }, 3000);
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpress(state.expenses, state.filters);
