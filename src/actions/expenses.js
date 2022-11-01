@@ -13,7 +13,8 @@ export const addExpense = (
     id: uuid(),
     description,
     note,
-    amount, createdAt
+    amount,
+    createdAt
   }
 });
 
