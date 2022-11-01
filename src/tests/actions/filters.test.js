@@ -5,7 +5,7 @@ test('should generate setStartDate action object', () => {
   const action = setStartDate(moment(1000));
   expect(action).toEqual({
     type: 'SET_START_DATE',
-    num: moment(1000),
+    startDate: moment(1000),
   })
 })
 
@@ -13,7 +13,7 @@ test('should generate setEndDate action object', () => {
   const action = setEndDate(moment(9000));
   expect(action).toEqual({
     type: 'SET_END_DATE',
-    num: moment(9000),
+    endDate: moment(9000),
   })
 })
 
