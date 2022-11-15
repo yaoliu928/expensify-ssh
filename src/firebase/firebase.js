@@ -22,11 +22,20 @@ database.ref().set({
     city: 'Philadelphia',
     country: 'United States'
   }
+}).then(() => {
+  console.log('Data is saved!');
+}).catch((e) => {
+  console.log('This failed.', e);
 });
 
-database.ref('age').set(27);
-database.ref('location/city').set('New York');
+// database.ref('age').set(27);
+// database.ref('location/city').set('New York');
 database.ref('attributes').set({
   height: 183,
   weight: 150
+}).then(() => {
+  console.log('Attributes is saved!');
+}).catch((e) => {
+  console.log('This failed.', e);
 });
+
