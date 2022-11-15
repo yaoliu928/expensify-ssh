@@ -8,6 +8,7 @@ import configureStore from './store/configureStore';
 import reportWebVitals from './reportWebVitals';
 import './index.scss';
 import './firebase/firebase';
+import './playground/promises';
 
 const store = configureStore();
 
