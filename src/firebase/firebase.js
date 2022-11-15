@@ -28,14 +28,15 @@ database.ref().set({
   console.log('This failed.', e);
 });
 
-// database.ref('age').set(27);
-// database.ref('location/city').set('New York');
-database.ref('attributes').set({
-  height: 183,
-  weight: 150
-}).then(() => {
-  console.log('Attributes is saved!');
-}).catch((e) => {
-  console.log('This failed.', e);
-});
+database.ref('isSingle').set(null);
+
+// database.ref().remove()
+//   .then(() => {
+//     console.log('Data was removed');
+//   })
+//   .catch((e) => {
+//     console.log('Did not remove data', e);
+//   });
+
+
 
