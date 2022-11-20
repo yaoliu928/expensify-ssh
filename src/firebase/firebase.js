@@ -13,23 +13,26 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
-// child_removed
-database.ref('expenses')
-  .on('child_removed', (snapshot) => {
-    console.log(snapshot.key, snapshot.val());
-  });
 
-// child_changed
-database.ref('expenses')
-  .on('child_changed', (snapshot) => {
-    console.log(snapshot.key, snapshot.val());
-  })
+export { firebase, database as default };
 
-// child_added
-database.ref('expenses')
-  .on('child_added', (snapshot) => {
-    console.log(snapshot.key, snapshot.val());
-  })
+// // child_removed
+// database.ref('expenses')
+//   .on('child_removed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+//   });
+
+// // child_changed
+// database.ref('expenses')
+//   .on('child_changed', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+//   })
+
+// // child_added
+// database.ref('expenses')
+//   .on('child_added', (snapshot) => {
+//     console.log(snapshot.key, snapshot.val());
+//   })
 
 // database.ref('expenses')
 //   .on('value', (snapshot) => {
@@ -56,12 +59,12 @@ database.ref('expenses')
 //     console.log(expenses);
 //   })
 
-database.ref('expenses').push({
-  description: 'Water bill',
-  note: 'First season',
-  amount: 60,
-  createdAt: 3000
-});
+// database.ref('expenses').push({
+//   description: 'Water bill',
+//   note: 'First season',
+//   amount: 60,
+//   createdAt: 3000
+// });
 
 
 // database.ref('notes').push({
