@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import AppRouter from './routers/AppRouter';
+import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
 
@@ -20,6 +20,14 @@ const jsx = (
   </Provider>
 );
 
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    root.render(<React.StrictMode>{jsx}</React.StrictMode>);
+    hasRendered = true;
+  }
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -28,20 +36,17 @@ root.render(
   </React.StrictMode>
 );
 
-store.dispatch(startSetExpenses())
-  .then(() => {
-    root.render(
-      <React.StrictMode>
-        {jsx}
-      </React.StrictMode>
-    );
-  })
-
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log('log in');
+    store.dispatch(startSetExpenses()).then(() => {
+      renderApp();
+      if (history.location.pathname === '/') {
+        history.push('/dashboard');
+      }
+    })
   } else {
-    console.log('log out');
+    renderApp();
+    history.push('/')
   }
 })
 
