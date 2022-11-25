@@ -9,6 +9,7 @@ import { startSetExpenses } from './actions/expenses';
 import reportWebVitals from './reportWebVitals';
 import './index.scss';
 import './firebase/firebase';
+import { firebase } from './firebase/firebase';
 //import './playground/promises';
 
 const store = configureStore();
@@ -36,7 +37,13 @@ store.dispatch(startSetExpenses())
     );
   })
 
-
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('log in');
+  } else {
+    console.log('log out');
+  }
+})
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
