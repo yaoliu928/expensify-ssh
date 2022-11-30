@@ -7,7 +7,7 @@ import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
 import reportWebVitals from './reportWebVitals';
-import './index.scss';
+import './styles/index.scss';
 import { firebase } from './firebase/firebase';
 //import './playground/promises';
 
