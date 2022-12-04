@@ -1,0 +1,14 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.loader__image {
+  background-image: url('../../../public/images/loader.gif');
+  background-size: contain;
+  height: 16rem;
+  width: 16rem;
+}

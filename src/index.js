@@ -9,6 +9,7 @@ import { login, logout } from './actions/auth';
 import reportWebVitals from './reportWebVitals';
 import './styles/index.scss';
 import { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 //import './playground/promises';
 
 const store = configureStore();
@@ -31,7 +32,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    {<p>Loading ...</p>}
+    {<LoadingPage />}
   </React.StrictMode>
 );
 
